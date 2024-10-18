@@ -1,0 +1,4 @@
+consumer_key = 'cfjLXsi7gggwOESNuuKJfKjQ9khhfIGR1s21Fslg32g4fLld'
+consumer_secret = 'fjo2eSxZbIECL2xV7rvkKmHf9swupohMUXkx8om0iPuXJkbAo7JsC1bOqkOY4yxj'
+business_short_code = '174379'
+passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
