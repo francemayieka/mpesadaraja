@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-_fz6h*l6c79u7h!h03ys)8pegfnr&^xplm(oh)z^x!^9)y2$@w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+SESSION_COOKIE_SECURE = True  # Secure session cookies over HTTPS only
+CSRF_COOKIE_SECURE = True  # Secure CSRF cookies
 
 # Application definition
 
@@ -53,7 +56,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'mpesa_project.urls'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-ALLOWED_HOSTS = ['mpesadaraja.azurewebsites.net', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['https://mpesadaraja.azurewebsites.net/', '127.0.0.1', 'localhost']
 
 
 TEMPLATES = [
