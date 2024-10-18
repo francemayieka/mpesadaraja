@@ -2,8 +2,12 @@ import requests
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from django.http import HttpResponse
 from .credentials import consumer_key, consumer_secret, business_short_code, passkey
 import base64
+
+def homepage(request):
+    return HttpResponse("<h1>Welcome to the M-Pesa Daraja Integration</h1>")
 
 def get_access_token():
     url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
