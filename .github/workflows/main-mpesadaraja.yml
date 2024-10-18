@@ -48,7 +48,9 @@ jobs:
     needs: build
     environment:
       name: 'production'
-      url: https://mpesadaraja.azurewebsites.net/
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -60,10 +62,12 @@ jobs:
         run: unzip release.zip
 
       
-      - name: ASP-mpesa-8670
+      - name: mpesa-app
         uses: azure/login@v2
         with:
-          subscription-id: 120d8a13-49fd-49c4-825e-b5dcf2498485
+          client-id: "71c164bd-ad8d-4382-bf94-ac666d6dca7a"
+          tenant-id: "6b5e42ce-5458-4d8f-86f5-62d5d71afba5"
+          subscription-id: "120d8a13-49fd-49c4-825e-b5dcf2498485"
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
